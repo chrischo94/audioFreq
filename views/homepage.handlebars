@@ -1,0 +1,23 @@
+ <div>
+    <form>
+        <label for="cars">Choose a category:</label>
+        <select name="categories" id="categories">
+            <option value="choose">Select</option>
+            <option value="movies">Movies</option>
+            <option value="tv">Television</option>
+            <option value="games">Games</option>
+            <option value="comics">Comics</option>
+        </select>
+        <br><br>
+      </form>
+    <h1>Welcome!</h1>
+    <h5>Wiki Hive connects you to all your favorite fan sites. Discover new wikis that peak your interest, and make new friends who share similar interests. Log in or sign up to get started!</h5>
+</div>
+
+<script type="text/javascript">
+  document.getElementById('categories').onchange = function(event){
+    event.preventDefault();
+    console.log("hi");
+    location.replace("/category/" + document.getElementById("categories").value);
+}
+</script>
