@@ -1,0 +1,55 @@
+<h1>{{user_name}}</h1>
+<h2>Favorites</h2>
+<ul>
+    {{#each wiki_data as |wiki|}}
+
+    <li>
+        <p>{{name}}</p>
+        <p>{{description}}</p>
+        <p><a href="category/wiki/{{wiki.id}}">View</a></p>
+        <button id="rem-fav">
+            Remove Favorite
+        </button>
+    </li>
+
+    {{/each}}
+
+</ul>
+
+<script type="text/javascript">
+    /*
+    const remFavorite = async (event) => {
+        event.preventDefault();
+
+        const user_id = 2;
+        const url = window.location.href;
+        let wiki_id = '';
+        let c = '';
+        var i = 1;
+        while (c !== '/') {
+            wiki_id = url[url.length - i] + wiki_id;
+            i++;
+            c = url[url.length - i];
+        }
+
+        if (user_id && wiki_id) {
+            const response = await fetch('/api/favorite', {
+                method: 'POST',
+                body: JSON.stringify({ wiki_id }),
+                headers: { 'Content-Type': 'application/json' },
+            });
+
+            if (response.ok) {
+                document.location.replace('/profile');
+            } else {
+                //document.location.replace('/hompage');
+            }
+        }
+        //document.location.replace('/homepage');
+    };
+
+    document
+        .querySelector('#rem-fav')
+        .addEventListener('click', remFavorite);
+    */
+</script>
