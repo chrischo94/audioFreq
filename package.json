@@ -1,0 +1,49 @@
+{
+  "name": "MERN-template",
+  "version": "1.0.0",
+  "description": "MERN template",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "npm run kill && nodemon server",
+    "start:prod": "node server.js",
+    "watch": "npm run kill && nodemon server.js",
+    "kill": "kill-port 3001",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clam1987/MERN-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clam1987/MERN-template/issues"
+  },
+  "homepage": "https://github.com/clam1987/MERN-template#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-sessions": "^1.0.6",
+    "if-env": "^1.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "uninstall": "0.0.0"
+  },
+  "devDependencies": {
+    "kill-port": "^1.6.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
