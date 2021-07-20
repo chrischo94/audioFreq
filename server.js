@@ -3,7 +3,10 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const routes = require('./routes');
+
+const cookieParser = require("cookie-parser");
+const MongoStore = require("connect-mongo")(session);
 
 const logger = require("morgan"); 
 const mongoose = require('mongoose');
@@ -29,16 +32,15 @@ db.Library.create({ name: "Podcast Library" })
 const hbs = exphbs.create({});
 
 
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  //TODO figure out what replaces
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
+app.use(cookieParser());
+app.use(session({
+    secret: 'my-secret',
+    resave: false,
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: db })
+}));
+
+//conect mongo db
 
 //TODO check to see if stays 
 app.use(session(sess));
