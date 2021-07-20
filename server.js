@@ -34,5 +34,3 @@ app.use(apiRoutes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/podCastDB", { useNewUrlParser: true });
 
 app.listen(PORT, () => console.log(`The server has started on PORT: ${PORT}`));
-
-
