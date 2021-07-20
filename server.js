@@ -1,4 +1,3 @@
-//TODO check to see if this stays 
 const path = require('path');
 
 const express = require('express');
@@ -48,6 +47,11 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// Use apiRoutes
+app.use("/api", apiRoutes);
+
+
+//Define Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
