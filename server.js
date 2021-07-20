@@ -1,40 +1,38 @@
-const path = require('path');
-const express = require('express');
+const express = require("express"),
+  app = express(),
+  mongoose = require("mongoose"),
+  passport = require("passport"),
+  logger = require("morgan"),
+  apiRoutes = require("./routes"),
+  PORT = process.env.PORT || 3001;
+require("dotenv").config();
+
 const session = require('express-session');
-const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const path = require('path');
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')(
+  {
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+  }));
 
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-// Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({});
-
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
-
-app.use(session(sess));
-
-// Inform Express.js on which template engine to use
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
-app.use(express.json());
+//Define Middleware
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(logger("dev"));
 
-app.use(routes);
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+app.use(apiRoutes);
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/podCastDB", { useNewUrlParser: true });
+
+app.listen(PORT, () => console.log(`The server has started on PORT: ${PORT}`));
+
+

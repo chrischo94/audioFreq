@@ -1,53 +1,58 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
-const bcrypt = require('bcryptjs');
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
+const bcrypt = require("bcrypt");
 
-class User extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
+const SALT_ROUNDS = 6;
 
-User.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    user_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-          isEmail: true,
-        },
-    },
-    password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-        validate: {
-            len: [8],
-        },
-    },
+const userSchema = new Schema({
+  firstName: {
+    type: String,
+    required: true,
   },
-  {
-    hooks: {
-      beforeCreate: async (newUserData) => {
-        newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        return newUserData;
-      },
-    },
-    sequelize,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
+  lastName: {
+    type: String,
+    required: true,
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  email: {
+    type: String,
+    unique: true,
+    match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
+  },
+  password: {
+    type: String,
+    trim: true,
+    required: "Password is Required",
+    validate: [({ length }) => length >= 6, "Password should be longer."],
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+userSchema.pre("save", function () {
+  if (!this.isModified("password")) {
+    return Promise.resolve();
   }
-);
+  if (this.password.length < 6) {
+    return Promise.reject(
+      new Error("Password must have at least 6 characters")
+    );
+  }
+  return bcrypt.hash(this.password, SALT_ROUNDS).then(hash => {
+    this.password = hash;
+  });
+});
+
+userSchema.methods.verifyPassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
+
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
