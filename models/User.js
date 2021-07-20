@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
 
-const SALT_ROUNDS = 6;
+const SALT_ROUNDS = 10;
 
 const userSchema = new Schema({
   firstName: {
@@ -29,7 +29,7 @@ const userSchema = new Schema({
     required: "Password is Required",
     validate: [({ length }) => length >= 6, "Password should be longer."],
   },
-  date: {
+  userCreated: {
     type: Date,
     default: Date.now,
   },

@@ -7,6 +7,7 @@ const express = require("express"),
   PORT = process.env.PORT || 3001;
 require("dotenv").config();
 
+//Cookies 
 const session = require('express-session');
 const path = require('path');
 app.use(require('cookie-parser')());
@@ -17,6 +18,7 @@ app.use(require('express-session')(
     resave: true,
     saveUninitialized: true
   }));
+
 
 //Define Middleware
 app.use(express.urlencoded({ extended: true }));
