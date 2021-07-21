@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+
+const CommentSchema = new Schema({
+    
+}); 
+
 const LibrarySchema = new Schema({
     name: {
         type: String,
@@ -13,4 +18,6 @@ const LibrarySchema = new Schema({
     ]
 });
 const Library = mongoose.model("Library", LibrarySchema);
+const Comment = mongoose.model("Comment", CommentSchema); 
+
 module.exports = Library;
