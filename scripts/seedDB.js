@@ -49,7 +49,7 @@ const podcastSeed = [
 ];
 db.Podcast
   .remove({})
-  .then(() => db.Podcast.collection.insertMany(podCastSeed))
+  .then(() => db.Podcast.collection.insertMany(podcastSeed))
   .then(data => {
     console.log(data.result.n + " podcasts included!");
     process.exit(0);
