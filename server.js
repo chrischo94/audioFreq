@@ -7,16 +7,24 @@ const express = require("express"),
   PORT = process.env.PORT || 3001;
 require("dotenv").config();
 
-const session = require('express-session');
+const session = require("express-session");
 //Cookies 
-app.use(require('cookie-parser')());
-app.use(require('body-parser').urlencoded({ extended: true }));
-app.use(require("express-sessions")(
-  {
-    secret: "keyboard-cat",
-    resave: true,
-    saveUninitialized: true
-  }));
+app.use(require("cookie-parser")());
+app.use(require("body-parser").urlencoded({ extended: true }));
+// app.use(require("express-sessions")(
+//   {
+//     secret: "keyboard-cat",
+//     resave: true,
+//     saveUninitialized: true
+//   }));
+const sess = {
+  secret: 'ssecret',
+  cookie: {},
+  resave: true,
+  saveUninitialized: true,
+
+};
+app.use(session(sess));
 
 
 //Define Middleware
