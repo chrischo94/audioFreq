@@ -13,7 +13,7 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "seed": "node-scripts/seedDB.js"
+    "seed": "node scripts/seedDB.js"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,6 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "express-sessions": "^1.0.6",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.9",
