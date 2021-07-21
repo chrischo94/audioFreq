@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const userRoutes = require("../api/user");
-const libraryRoutes = require("../api/library");
-const podCastRoutes = require("../api/podCast");
+// const libraryRoutes = require("../api/library");
+// const podCastRoutes = require("../api/podCast");
 
 const isUserAuthenticated = require("../../middleware/isAuthenticated");
 
 router.use("/users", userRoutes);
-router.use("/libray", libraryRoutes); 
-router.use("/podcast", podCastRoutes); 
+// // router.use("/libray", libraryRoutes); 
+// // router.use("/podcast", podCastRoutes); 
 
 router.get("/secret", isUserAuthenticated, (req, res) => {
   res.send("this is a secret!");
