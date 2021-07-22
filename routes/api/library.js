@@ -10,9 +10,10 @@ router
 // api/library/:id
 router
     .route("/:id")
-    .get(LibraryController.findById);
-    
+    .get(LibraryController.findById)
+    .put(LibraryController.update)
+    .delete(LibraryController.remove)
+    .put(LibraryController.comment);
 
 
-
-modulle.exports = router; 
+module.exports = router; 
