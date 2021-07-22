@@ -47,9 +47,9 @@ const podcastSeed = [
     link: "http://JREpod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website"
   },
 ];
-db.Podcast
+db.Library
   .remove({})
-  .then(() => db.Podcast.collection.insertMany(podcastSeed))
+  .then(() => db.Library.collection.insertMany(podcastSeed))
   .then(data => {
     console.log(data.result.n + " podcasts included!");
     process.exit(0);
