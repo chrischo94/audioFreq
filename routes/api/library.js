@@ -11,9 +11,9 @@ router
 router
     .route("/:id")
     .get(LibraryController.findById)
-    .put(LibraryController.update)
+    // .put(LibraryController.update)
     .delete(LibraryController.remove)
-    .put(LibraryController.comment);
+    // .post(LibraryController.comment);
 
 
 module.exports = router; 
