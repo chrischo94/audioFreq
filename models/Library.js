@@ -20,7 +20,7 @@ const LibrarySchema = new Schema({
 
 const Library = mongoose.model("Library", LibrarySchema);
 const Comment = mongoose.model("Comment", CommentSchema);
-module.exports = {Library, Comment};
+module.exports = Library;
 
 // const Library = mongoose.model("Library", LibrarySchema);
 // const Comment = mongoose.model("Comment”, CommentSchema);
