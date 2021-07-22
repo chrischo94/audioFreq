@@ -6,7 +6,7 @@ const podCastRoutes = require("../api/podCast");
 const isUserAuthenticated = require("../../middleware/isAuthenticated");
 
 router.use("/users", userRoutes);
-router.use("/libray", libraryRoutes); 
+router.use("/library", libraryRoutes); 
 router.use("/podCast", podCastRoutes); 
 
 router.get("/secret", isUserAuthenticated, (req, res) => {
