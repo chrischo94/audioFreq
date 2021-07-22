@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import { useAuth } from "../../utils/auth/"
 import API from "../../utils/axios/API";
-import './LandingPage.css';
+import './Welcome.css';
 
-const LandingPage = () => {
+const Welcome = () => {
     const { user, logout } = useAuth();
     const fullName = (user) => `${user.firstName} ${user.lastName}`
     return (
@@ -28,4 +28,4 @@ const LandingPage = () => {
     )
 };
 
-export default LandingPage;
+export default Welcome;
