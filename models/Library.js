@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 
 const LibrarySchema = new Schema({
-    name: {
+    username: {
         type: String,
     },
     podcasts: [
@@ -16,4 +16,3 @@ const LibrarySchema = new Schema({
 
 const Library = mongoose.model("Library", LibrarySchema);
 module.exports = Library;
-
