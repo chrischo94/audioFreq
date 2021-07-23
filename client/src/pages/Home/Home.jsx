@@ -2,13 +2,19 @@ import React from "react";
 import axios from "axios";
 import { useAuth } from "../../utils/auth"
 import API from "../../utils/axios/API";
-import './Home.css';
+
+// import './Home.css';
 
 
-const Home = () => {
+
+import NavBar from "../../components/Navbar"; 
+
+function Home() {
     return (
         <div>
-          Hello World!
+            <NavBar>
+                Hello World 
+            </NavBar>
         </div>
     )
 };
