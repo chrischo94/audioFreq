@@ -9,9 +9,8 @@ import { addAuthHeader } from './utils/auth';
 axios.interceptors.request.use(addAuthHeader);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
+
   document.getElementById('root')
 );
 

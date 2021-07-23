@@ -13,7 +13,9 @@ router
     .get(LibraryController.findById)
     .put(LibraryController.update)
     .delete(LibraryController.remove)
-    .put(LibraryController.comment);
+    // for the comment post route / comment method we need a Corresponding controller method for it. 
+    
+    // .post(LibraryController.comment);
 
 
 module.exports = router; 
