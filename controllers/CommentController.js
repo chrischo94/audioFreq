@@ -16,10 +16,14 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-      db.Comment
-        .create(req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+      db.Comment.create(body)
+      .then(({ _id }) => db.Podcast.findOneAndUpdate({_id:req.params.id}, { $push: { comments: _id } }, { new: true }))
+      .then(dbUser => {
+        res.json(dbUser);
+      })
+      .catch(err => {
+        res.json(err);
+      });
     },
     update: function(req, res) {
       db.Comment
