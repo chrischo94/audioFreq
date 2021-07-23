@@ -33,5 +33,15 @@ module.exports = {
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
-  }
+  },
+  // comment: function(req, res) {
+  //   db.Comment.create(body)
+  //   .then(({ _id }) => db.Podcast.findOneAndUpdate({_id:req.params.id}, { $push: { comments: _id } }, { new: true }))
+  //   .then(dbUser => {
+  //     res.json(dbUser);
+  //   })
+  //   .catch(err => {
+  //     res.json(err);
+  //   });
+  // }
 };
