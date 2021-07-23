@@ -1,13 +1,12 @@
 import React from "react";
 import axios from "axios";
-import { useAuth } from "../../utils/auth/"
+import { useAuth } from "../../utils/auth"
 import API from "../../utils/axios/API";
-import './Profile.css';
+import './Results.css';
 
-const Profile = () => {
+const Results = () => {
     return (
         <div>Hey Please Work!</div>
     )
 };
-
-export default Profile;
+export default Results;
