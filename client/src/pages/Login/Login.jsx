@@ -3,12 +3,15 @@ import axios from "axios";
 import { useAuth } from "../../utils/auth"
 import API from "../../utils/axios/API";
 import './Login.css';
+import NavBar from "../../components/Navbar"; 
+import Navbar from "../../components/Navbar";
+
 
 
 const Login = () => {
     return (
+  
 
-          
                  <div className="hero">
                   <div className="form-box">
                     <div className="button-box">
@@ -31,7 +34,6 @@ const Login = () => {
                     </form>
                   </div>
                 </div>
-                
               );
             }
 export default Login;
