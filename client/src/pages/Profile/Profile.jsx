@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { useAuth } from "../../utils/auth"
 import API from "../../utils/axios/API";
-import Navbar from "../../components/Navbar";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
