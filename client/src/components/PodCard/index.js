@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function PodCard() {
+function PodCard(prop) {
     return (
         <Card 
         className="card"
