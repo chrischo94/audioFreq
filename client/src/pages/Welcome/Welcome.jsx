@@ -8,9 +8,9 @@ const Welcome = () => {
 
     return (
         <div>
-            <div className="text-xxl-end">
+            <div className="text-xl-end">
                 <a href="./">
-                    <img src="AudioFreq_logo.png" alt="..." height="750"/>
+                    <img src="AudioFreq_logo.png" alt="..." height="500"/>
                 </a>
             </div>
 
