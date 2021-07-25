@@ -5,8 +5,6 @@ import API from "../../utils/axios/API";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-
-// import './Home.css';
 import NavBar from "../../components/Navbar";
 import PodCard from "../../components/PodCard";
 
@@ -17,14 +15,29 @@ function Home() {
                 Hello World
             </NavBar>
             <Container>
-                <Row>
-                    <PodCard/>
-                    <PodCard/>
-                    <PodCard/>
-                    <PodCard/>
-                    <PodCard/>
-                    <PodCard/>
-                    <PodCard/>
+                <Row lg={3} >
+                    <Col>
+                        <PodCard />
+                    </Col>
+                    <Col>
+                        <PodCard />
+                    </Col>
+                    <Col>
+                        <PodCard />
+                    </Col>
+                    <Col>
+                        <PodCard />
+                    </Col>
+                    <Col>
+                        <PodCard />
+                    </Col>
+                    <Col>
+                        <PodCard />
+                    </Col>
+                    <Col>
+                        <PodCard />
+                    </Col>
+
                 </Row>
             </Container>
         </div>
