@@ -3,37 +3,64 @@ import axios from "axios";
 import { useAuth } from "../../utils/auth"
 import API from "../../utils/axios/API";
 import './Login.css';
-import NavBar from "../../components/Navbar"; 
-import Navbar from "../../components/Navbar";
 
-
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { NavBar } from "../../components/Navbar"
 
 const Login = () => {
-    return (
-  
+  return (
+    <Container>
+      <NavBar></NavBar>
+      <Row>
+        <Col>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
 
-                 <div className="hero">
-                  <div className="form-box">
-                    <div className="button-box">
-                      <div id="btn" />
-                      <button type="button" className="toggle-btn" onclick="login()">Login</button>
-                      <button type="button" className="toggle-btn" onclick="register()">Register</button>
-                    </div>
-                    <form id="login" className="input-group">
-                      <input type="text" className="input-field" placeholder="Enter Username" required />
-                      <input type="text" className="input-field" placeholder="Enter Password" required />
-                      <input type="checkbox" className="check-box" /><span>Remember Password</span>
-                      <button type="submit" className="submit-btn">Login</button>
-                    </form>
-                    <form id="register" className="input-group">
-                      <input type="text" className="input-field" placeholder="Enter Username" required />
-                      <input type="email" className="input-field" placeholder="Enter Email" required />
-                      <input type="text" className="input-field" placeholder="Enter Password" required />
-                      <input type="checkbox" className="check-box" /><span>I agree to the terms &amp; conditions</span>
-                      <button type="submit" className="submit-btn">Register</button>
-                    </form>
-                  </div>
-                </div>
-              );
-            }
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="Check me out" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+        <Col>
+          <Form>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Text className="text-muted">
+                We'll never share your email with anyone else.
+              </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="Check me out" />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
+
+    </Container>
+  );
+}
 export default Login;
