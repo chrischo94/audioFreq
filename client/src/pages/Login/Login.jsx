@@ -7,15 +7,18 @@ import './Login.css';
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { NavBar } from "../../components/Navbar"
+import { Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import NavBar from "../../components/Navbar"
 
 const Login = () => {
   return (
     <Container>
-      <NavBar></NavBar>
+      <NavBar />
       <Row>
         <Col>
           <Form>
+            <h1>Login</h1>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
@@ -38,6 +41,7 @@ const Login = () => {
         </Col>
         <Col>
           <Form>
+            <h1>Sign-Up</h1>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
