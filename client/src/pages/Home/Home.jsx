@@ -4,10 +4,8 @@ import { useAuth } from "../../utils/auth"
 import API from "../../utils/axios/API";
 
 // import './Home.css';
-
-
-
-import NavBar from "../../components/Navbar"; 
+import NavBar from "../../components/Navbar";
+import PodCard from "../../components/PodCard";
 
 function Home() {
     return (
@@ -15,6 +13,9 @@ function Home() {
             <NavBar>
                 Hello World 
             </NavBar>
+            <PodCard>
+                Test Card
+            </PodCard>
         </div>
     )
 };
