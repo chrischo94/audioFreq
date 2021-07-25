@@ -1,19 +1,16 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const PodcastSchema = new Schema({
-    title: {
+    title_original: {
         type: String
     },
-    publisher: {
+    description_original: {
         type: String
     },
-    description: {
+    image: {
         type: String
     },
-    listen_score_global_rank: {
-        type: String
-    },
-    link: {
+    audio: {
         type: String
     },
     comments: [

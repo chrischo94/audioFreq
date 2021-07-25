@@ -7,44 +7,42 @@ mongoose.connect(
 );
 const podcastSeed = [
   {
-    title: "Modern Finance",
-    publisher: "Kevin Rose",
-    description:
+    title_original: "Modern Finance",
+    description_original:
       "Modern Finance breaks down all things bitcoin, cryptocurrency, finance hacks & tips, decentralized finance (DeFi), yield farming, NFTs, robo-investing, and more. Join entrepreneur and technology venture capitalist Kevin Rose as he interviews experts and the entrepreneurs building modern finance tools. Time Magazine calls Kevin one of the 'Top 25 Most Influential People on the Web,' and Bloomberg lists him as a 'Top 25 Angel Investor.' Kevin has appeared on the Jimmy Fallon Show, Charlie Rose Show, as well as the print covers of Businessweek and Inc. Magazine.",
-    listen_score_global_rank: "0.5%",
-    link: ""
+    audio: "",
+    image: ""
   },
   {
-    title: "The Rough Cut",
-    publisher: "Matt Feury",
-    description:
+    title_original: "The Rough Cut",
+    description_original:
       "The Rough Cut breaks down all things bitcoin, cryptocurrency, finance hacks & tips, decentralized finance (DeFi), yield farming, NFTs, robo-investing, and more. Join entrepreneur and technology venture capitalist Kevin Rose as he interviews experts and the entrepreneurs building modern finance tools. Time Magazine calls Kevin one of the 'Top 25 Most Influential People on the Web,' and Bloomberg lists him as a 'Top 25 Angel Investor.' Kevin has appeared on the Jimmy Fallon Show, Charlie Rose Show, as well as the print covers of Businessweek and Inc. Magazine.",
-    listen_score_global_rank: "2.5%",
-    link: "http://theroughcutpod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website"
+    audio: "http://theroughcutpod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website",
+    image: ""
   },
   {
-    title: "Sky Sports Lock Up",
+    title_original: "Sky Sports Lock Up",
     publisher: "Chris Cho",
-    description:
+    description_original:
       "Sky Sports Lock Up breaks down all things bitcoin, cryptocurrency, finance hacks & tips, decentralized finance (DeFi), yield farming, NFTs, robo-investing, and more. Join entrepreneur and technology venture capitalist Kevin Rose as he interviews experts and the entrepreneurs building modern finance tools. Time Magazine calls Kevin one of the 'Top 25 Most Influential People on the Web,' and Bloomberg lists him as a 'Top 25 Angel Investor.' Kevin has appeared on the Jimmy Fallon Show, Charlie Rose Show, as well as the print covers of Businessweek and Inc. Magazine.",
-    listen_score_global_rank: "5.0%",
-    link: "http://skysportslockuppod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website"
+    audio: "http://skysportslockuppod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website",
+    image:""
   },
   {
-    title: "The Side Dish",
-    publisher: "Bestville Apartments",
-    description:
+    title_original: "The Side Dish",
+
+    description_original:
       "The Side Dish breaks down all things bitcoin, cryptocurrency, finance hacks & tips, decentralized finance (DeFi), yield farming, NFTs, robo-investing, and more. Join entrepreneur and technology venture capitalist Kevin Rose as he interviews experts and the entrepreneurs building modern finance tools. Time Magazine calls Kevin one of the 'Top 25 Most Influential People on the Web,' and Bloomberg lists him as a 'Top 25 Angel Investor.' Kevin has appeared on the Jimmy Fallon Show, Charlie Rose Show, as well as the print covers of Businessweek and Inc. Magazine.",
-    listen_score_global_rank: "99%",
-    link: "http://thesidedishpod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website"
+    audio: "http://thesidedishpod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website",
+    image: ""
   },
   {
-    title: "Joe Rogan Experience",
-    publisher: "Spotify",
-    description:
+    title_original: "Joe Rogan Experience",
+   
+    description_original:
       "JRE breaks down all things bitcoin, cryptocurrency, finance hacks & tips, decentralized finance (DeFi), yield farming, NFTs, robo-investing, and more. Join entrepreneur and technology venture capitalist Kevin Rose as he interviews experts and the entrepreneurs building modern finance tools. Time Magazine calls Kevin one of the 'Top 25 Most Influential People on the Web,' and Bloomberg lists him as a 'Top 25 Angel Investor.' Kevin has appeared on the Jimmy Fallon Show, Charlie Rose Show, as well as the print covers of Businessweek and Inc. Magazine.",
-    listen_score_global_rank: "6.0%",
-    link: "http://JREpod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website"
+    audio: "http://JREpod.com/?p=786&utm_source=listennotes.com&utm_campaign=Listen+Notes&utm_medium=website",
+    image: ""
   },
 ];
 db.Podcast
