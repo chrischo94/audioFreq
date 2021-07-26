@@ -32,6 +32,7 @@ function Home() {
           })
           .catch(err => console.log(err));
       }
+
     
       console.log(podcast.title_original)
       
@@ -45,28 +46,13 @@ function Home() {
             </NavBar>
             <Container>
                 <Row lg={3} >
-                    <Col>
-                        <PodCard title={podcast.title_original} image={podcast.image} />
+                    {podcasts.map(podcast =>(
+                        <Col>
+                        <PodCard title={podcast.title_original} image={podcast.image} description={podcast.description_original}/>
                     </Col>
-                    <Col>
-                        <PodCard />
-                    </Col>
-                    <Col>
-                        <PodCard />
-                    </Col>
-                    <Col>
-                        <PodCard />
-                    </Col>
-                    <Col>
-                        <PodCard />
-                    </Col>
-                    <Col>
-                        <PodCard />
-                    </Col>
-                    <Col>
-                        <PodCard />
-                    </Col>
-
+                    ))}
+                    
+                    
                 </Row>
             </Container>
         </div>
