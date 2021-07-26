@@ -46,4 +46,7 @@ export default {
     saveComment: function(CommentData) {
     return axios.post("/api/comment", CommentData);
     },
-}
+    getDaPodcast: function(){
+        return axios.get("/api/podCast")
+    }
+}; 
