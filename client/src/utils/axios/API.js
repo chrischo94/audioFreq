@@ -18,18 +18,18 @@ export default {
     saveUser: function(userData) {
     return axios.post("/api/users", userData);
     },
-    getPodcasts: function() {
+    getLibraries: function() {
         return axios.get("/api/Library")
     },
-    getPodcast: function(id) {
+    getLibrary: function(id) {
         return axios.get("/api/Library/" + id);
       },
       // Deletes the Podcast with the given id
-    deletePodcast: function(id) {
+    deleteLibrary: function(id) {
     return axios.delete("/api/Library/" + id);
     },
     // Saves a Podcast to the database
-    savePodcast: function(LibraryData) {
+    saveLibrary: function(LibraryData) {
     return axios.put("/api/library/" + LibraryData);
     },
     getComments: function() {
