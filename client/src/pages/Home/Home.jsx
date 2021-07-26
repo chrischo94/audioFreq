@@ -33,12 +33,24 @@ function Home() {
           .catch(err => console.log(err));
       }
 
+    //   function handleFormSubmit(event,id) {
+    //     event.preventDefault();
+    //    //find which object by id
+    //       API.savePodcast({
+    //         title: formObject.title,
+    //         image: formObject.author,
+    //         description: formObject.synopsis
+    //       })
+    //         .then(res => loadPodcast())
+    //         .catch(err => console.log(err));
+
+    //   };
     
-      console.log(podcast.title_original)
+      
       
 
 
-
+    //TODO how to find a specific id from the click of button and adding to library. 
     return (
         <div className="overflow-scroll" >
             <NavBar>
@@ -48,7 +60,7 @@ function Home() {
                 <Row lg={3} >
                     {podcasts.map(podcast =>(
                         <Col>
-                        <PodCard title={podcast.title_original} image={podcast.image} description={podcast.description_original}/>
+                        <PodCard key={podcast._id} title={podcast.title_original} image={podcast.image} description={podcast.description_original}/>
                     </Col>
                     ))}
                     
