@@ -13,8 +13,8 @@ function PodCard(prop) {
     return (
         <Container>
             <Card
-                className="card"
-                style={{ width: '18rem' }}>
+                className="card mt-5"
+                style={{ width: '15rem' }}>
                 <Card.Img variant="top" src="holder.js/100px180" rounded />
                 <Card.Body>
                     <Card.Title>Card Title</Card.Title>
@@ -35,5 +35,6 @@ function PodCard(prop) {
         </Container>
     );
 }
+
 
 export default PodCard;
