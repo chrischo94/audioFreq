@@ -8,18 +8,19 @@ function Navbar() {
 
     <nav className="navbar navbar-light bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand"><a href="./starterPage.html">
-         <img src="AudioFreq_logo.png" alt="logo" width="300" height="120">
-           </img>
-       </a></a>
+        <a className="navbar-brand"><a href="/Home">
+          <img src="AudioFreq_logo.png" alt="logo" width="300" height="120">
+          </img>
+        </a></a>
+
         <form className="d-flex">
+          <a class="nav-link" href="/Profile">Profile</a>
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-            {/* <button className="btn btn-outline-success" type="submit">Search</button> */}
-      </form>
-    </div>
-  </nav>
-  
-    );
+        </form>
+      </div>
+    </nav>
+
+  );
 }
 
-      export default Navbar;
+export default Navbar;
