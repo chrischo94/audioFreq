@@ -14,7 +14,7 @@ const Profile = () => {
         <div>
             <NavBar />
             <Container>
-                <h1>Favorite</h1>
+                <h1>Favorites</h1>
                 <hr />
                 <Row lg={4} >
                     <Col xs={6} md={4} >
@@ -30,49 +30,12 @@ const Profile = () => {
                         <ProfileCards />
                     </Col>
                 </Row>
-                <h1>Watched</h1>
-                <hr />
-                <Row lg={4} >
-                    <Col xs={6} md={4} >
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                </Row>
-                <h1>Recent</h1>
-                <hr />
-                <Row lg={4} >
-                    <Col xs={6} md={4} >
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                </Row>
-                <h1>Review</h1>
+                <h1>Reviews</h1>
                 <hr />
                 <Row>
                 <Col>
                 <Image src="holder.js/171x180" rounded />
                 </Col>
-                <Col>
-                    <p>***** Ratings</p>
-                    <p>This is where the review will be</p>
-                </Col>
-
                 </Row>
                 {/* Last row has a Image on the right. This Row is occupied with only the Content that has a review with it.There should bea  button under for Comment.  */}
 
