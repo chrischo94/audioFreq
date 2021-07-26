@@ -9,15 +9,15 @@ import { Container } from "react-bootstrap";
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function PodCard(prop) {
+function PodCard({title,image}) {
     return (
         <Container>
             <Card
                 className="card mt-5"
                 style={{ width: '15rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" rounded />
+                <Card.Img variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{title} </Card.Title>
                     <Card.Text>
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.

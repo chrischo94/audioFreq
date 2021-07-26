@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "../../utils/auth"
+import { useAuth, user } from "../../utils/auth"
 import API from "../../utils/axios/API"
 
 import { Col } from "react-bootstrap";
@@ -9,33 +9,35 @@ import NavBar from "../../components/Navbar";
 import PodCard from "../../components/PodCard";
 
 
-// function Podcasts() {
-//     //setting our components initial state
-//     const [podcast, setPodcast] = useState([])
-// }
-
-// useEffect(() => {
-//     loadPodcast()
-// }, [])
-loadPodcast(); 
-
-function loadPodcast() {
-    API.getDaPodcast()
-        .then(res =>
-            console.log(res.data),
-            // setPodcast(res.data)
-        )
-        .catch(err => console.log(err));
-}
-
-
-
-
-
-
-
-
 function Home() {
+
+
+
+    //setting our components initial state
+    const [podcasts, setPodcasts] = useState([])
+    const [podcast, setPodcast] = useState({})
+
+
+    useEffect(() => {
+        loadPodcast()
+    }, [])
+   
+
+    function loadPodcast() {
+        API.getDaPodcast()
+          .then(users => {
+            setPodcasts(users.data);
+            setPodcast(users.data[0]);
+            console.log(users.data[0])
+          })
+          .catch(err => console.log(err));
+      }
+    
+      console.log(podcast.podcast)
+      
+
+
+
     return (
         <div className="overflow-scroll" >
             <NavBar>
@@ -44,7 +46,7 @@ function Home() {
             <Container>
                 <Row lg={3} >
                     <Col>
-                        <PodCard />
+                        <PodCard title={podcast.title_original} image={podcast.image} />
                     </Col>
                     <Col>
                         <PodCard />
