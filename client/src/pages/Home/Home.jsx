@@ -33,16 +33,11 @@ function Home() {
           .catch(err => console.log(err));
       }
 
-      function handleFormSubmit(event) {
-        event.preventDefault();
-        console.log(event.target)
-        const {title, image, description} = event.target; 
+      function handleFormSubmit(id) {
        //find which object by id
-          API.savePodcast({
-            title: title,
-            image: image,
-            description: description
-          })
+          API.savePodcast(
+              id
+          )
             .then(res => loadPodcast())
             .catch(err => console.log(err));
 
@@ -63,7 +58,7 @@ function Home() {
                     {podcasts.map(podcast =>(
                         <Col key={podcast._id}  >
                         <PodCard 
-                        
+                        id={podcast._id}
                         title={podcast.title_original} 
                         image={podcast.image} 
                         description={podcast.description_original}

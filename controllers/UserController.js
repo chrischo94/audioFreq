@@ -12,6 +12,10 @@ module.exports = {
             User.findOne({$or: [{email}, {username}]}).then(user => {
                 if(user === null) {
                     User.create(req.body)
+                    .then(createdUser => {
+                        db.Library
+                        .create({username: username})
+                    })
                     return res.status(200).json('User created');
                 };
 
@@ -31,8 +35,14 @@ module.exports = {
     },
     login: (req, res) => {
         try {
-            const { id } = req.user
-            res.status(200).json({ token: jwt.sign({id}), token_type: "Bearer" });
+            console.log(req.user)
+            const id = req.user._id
+            console.log(id)
+            req.session.save(()=> {
+                req.session.username = req.user.username
+                res.status(200).json({ token: jwt.sign({id}), token_type: "Bearer" });
+            })
+            
         } catch (err) {
             return res.status(500).send("Server error, cannot login");
         }
