@@ -33,7 +33,7 @@ function Home() {
           .catch(err => console.log(err));
       }
     
-      console.log(podcast.podcast)
+      console.log(podcast.title_original)
       
 
 
