@@ -2,6 +2,8 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 function MyVerticallyCenteredModal(props) {
   return (
