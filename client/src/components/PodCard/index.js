@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import "./style.css";
@@ -6,12 +6,17 @@ import { Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-
+import Modal1 from "../../components/Modal"
 
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function PodCard({title,image,description, handleFormSubmit, id}) {
+   
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+    
     return (
         <Container>
             <Card
@@ -28,7 +33,11 @@ function PodCard({title,image,description, handleFormSubmit, id}) {
                             <Button onClick={()=>handleFormSubmit(id)} size="sm" variant="primary">Watched</Button>
                         </Col>
                         <Col>
-                            <Button size="sm" variant="primary">Review</Button>
+                            <Button size="sm" variant="primary" onClick={() => setModalShow(true)} >Review</Button>
+                            <Modal1 show={modalShow}
+        onHide={() => setModalShow(false)}>
+
+                            </Modal1>
                         </Col>
                     </Row>
                 </Card.Body>
