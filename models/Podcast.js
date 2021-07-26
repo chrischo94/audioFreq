@@ -18,7 +18,8 @@ const PodcastSchema = new Schema({
             type: Schema.Types.ObjectId,
             ref: "Comment"
         }
-    ]
+    ],
+ 
 });
 const Podcast = mongoose.model("Podcast", PodcastSchema);
 module.exports = Podcast;
