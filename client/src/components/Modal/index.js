@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
@@ -9,8 +9,15 @@ import { Form } from "react-bootstrap";
 
 
 function Modal1(props) {
+  const [text, setText] = useState("")
+  const handleInputChange = event => {
+    setText(event.target.value);
+  };
+  
+  useEffect(() => {
+    console.log(text)
 
-
+   }, [text])
 
 
   return (
@@ -34,6 +41,7 @@ function Modal1(props) {
                   as="textarea"
                   placeholder="Leave a comment here"
                   style={{ height: '100px' }}
+                  onChange={handleInputChange}
                 />
               </Form>
             </Col>
@@ -41,7 +49,7 @@ function Modal1(props) {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary" type="submit">
+        <Button onClick={()=> props.handleCommentSubmit(props.id1, text)} variant="primary" type="submit">
           Submit
         </Button>
       </Modal.Footer>

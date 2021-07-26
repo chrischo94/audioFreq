@@ -16,13 +16,14 @@ function Home() {
     //setting our components initial state
     const [podcasts, setPodcasts] = useState([])
     const [podcast, setPodcast] = useState({})
-
+    const [libraries, setLibraries] = useState([])
+    const [library, setLibrary] = useState({})
+  
 
     useEffect(() => {
         loadPodcast()
     }, [])
-   
-
+    
     function loadPodcast() {
         API.getDaPodcast()
           .then(users => {
@@ -42,9 +43,25 @@ function Home() {
             .catch(err => console.log(err));
 
       };
-    
-      
-      
+    function loadLibrary() {
+        API.getPodcasts()
+          .then(podcasts => {
+            setLibraries(podcasts.data);
+            setLibrary(podcasts.data[0]);
+            console.log(podcasts.data[0])
+          })
+          .catch(err => console.log(err));
+      }
+
+    function handleCommentSubmit(id1, text) {
+        API.saveComment(
+            id1,
+            text
+        )
+        .then(res => loadLibrary())
+        .catch(err => console.log(err))
+    }
+
 
 
     //TODO how to find a specific id from the click of button and adding to library. 
@@ -63,6 +80,8 @@ function Home() {
                         image={podcast.image} 
                         description={podcast.description_original}
                         handleFormSubmit={handleFormSubmit}
+                        handleCommentSubmit={handleCommentSubmit}
+                        
                         />
                     </Col>
                     ))}
