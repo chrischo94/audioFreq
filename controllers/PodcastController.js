@@ -3,6 +3,7 @@ const db = require("../models");
 // Defining methods for the PodcastsController
 module.exports = {
   findAll: function(req, res) {
+    console.log(req.session)
     db.Podcast
       .find(req.query)
       .sort({ name: 1 })

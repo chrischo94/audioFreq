@@ -5,6 +5,7 @@ module.exports = {
   findAll: function(req, res) {
     db.Library
       .find(req.query)
+      .populate("podcasts")
       .sort({ name: 1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -12,6 +13,7 @@ module.exports = {
   findById: function(req, res) {
     db.Library
       .findById(req.params.id)
+      .populate("podcasts")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -22,9 +24,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
-    db.Library
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+    db.Library.findOneAndUpdate({username:req.session.username}, { $push: { podcasts: req.params.id } }, { new: true })
+      .then(dbUser => {
+        console.log(dbUser)
+        res.json(dbUser);
+      })
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {

@@ -30,7 +30,7 @@ export default {
     },
     // Saves a Podcast to the database
     savePodcast: function(LibraryData) {
-    return axios.post("/api/Library", LibraryData);
+    return axios.put("/api/library/" + LibraryData);
     },
     getComments: function() {
         return axios.get("/api/comment")
