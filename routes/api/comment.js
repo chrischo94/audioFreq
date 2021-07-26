@@ -11,6 +11,7 @@ router
 router
     .route("/:id")
     .get(CommentController.findById)
+    .post(CommentController.create)
     .delete(CommentController.remove)
 
 

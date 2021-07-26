@@ -43,8 +43,8 @@ export default {
     return axios.delete("/api/comment/" + id);
     },
     // Saves a comment to the database
-    saveComment: function(CommentData) {
-    return axios.post("/api/comment", CommentData);
+    saveComment: function(id, CommentData) {
+    return axios.post("/api/comment/" + id, {text: CommentData});
     },
     getDaPodcast: function(){
         return axios.get("/api/podCast")

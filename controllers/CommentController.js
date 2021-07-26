@@ -16,7 +16,8 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-      db.Comment.create(body)
+      console.log(req.body)
+      db.Comment.create(req.body)
       .then(({ _id }) => db.Podcast.findOneAndUpdate({_id:req.params.id}, { $push: { comments: _id } }, { new: true }))
       .then(dbUser => {
         res.json(dbUser);
