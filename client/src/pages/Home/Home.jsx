@@ -10,7 +10,7 @@ import PodCard from "../../components/PodCard";
 
 function Home() {
     return (
-        <div>
+        <div className="overflow-scroll" >
             <NavBar>
                 Hello World
             </NavBar>
