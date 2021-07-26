@@ -11,7 +11,7 @@ import { Container } from "react-bootstrap";
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function PodCard({title,image,description}) {
+function PodCard({title,image,description, handleFormSubmit}) {
     return (
         <Container>
             <Card
@@ -25,7 +25,7 @@ function PodCard({title,image,description}) {
                     </Card.Text>
                     <Row lg={2} >
                         <Col>
-                            <Button size="sm" variant="primary">Watched</Button>
+                            <Button onClick={()=> handleFormSubmit} size="sm" variant="primary">Watched</Button>
                         </Col>
                         <Col>
                             <Button size="sm" variant="primary">Review</Button>

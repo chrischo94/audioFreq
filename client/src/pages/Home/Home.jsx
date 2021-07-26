@@ -33,18 +33,20 @@ function Home() {
           .catch(err => console.log(err));
       }
 
-    //   function handleFormSubmit(event,id) {
-    //     event.preventDefault();
-    //    //find which object by id
-    //       API.savePodcast({
-    //         title: formObject.title,
-    //         image: formObject.author,
-    //         description: formObject.synopsis
-    //       })
-    //         .then(res => loadPodcast())
-    //         .catch(err => console.log(err));
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        console.log(event.target)
+        const {title, image, description} = event.target; 
+       //find which object by id
+          API.savePodcast({
+            title: title,
+            image: image,
+            description: description
+          })
+            .then(res => loadPodcast())
+            .catch(err => console.log(err));
 
-    //   };
+      };
     
       
       
@@ -59,8 +61,14 @@ function Home() {
             <Container>
                 <Row lg={3} >
                     {podcasts.map(podcast =>(
-                        <Col>
-                        <PodCard key={podcast._id} title={podcast.title_original} image={podcast.image} description={podcast.description_original}/>
+                        <Col key={podcast._id}  >
+                        <PodCard 
+                        
+                        title={podcast.title_original} 
+                        image={podcast.image} 
+                        description={podcast.description_original}
+                        handleFormSubmit={handleFormSubmit}
+                        />
                     </Col>
                     ))}
                     
