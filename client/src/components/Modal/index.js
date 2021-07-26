@@ -1,11 +1,18 @@
+import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
-function MyVerticallyCenteredModal(props) {
+
+function Modal1(props) {
+
+
+
+
   return (
     <Modal
       {...props}
@@ -22,13 +29,13 @@ function MyVerticallyCenteredModal(props) {
         <Form>
           <Row className="align-items-center">
             <Col xs="auto" className="my-1">
-              <FloatingLabel controlId="floatingTextarea2" label="Comments">
+              <Form>
                 <Form.Control
                   as="textarea"
                   placeholder="Leave a comment here"
                   style={{ height: '100px' }}
                 />
-              </FloatingLabel>
+              </Form>
             </Col>
           </Row>
         </Form>
@@ -37,32 +44,29 @@ function MyVerticallyCenteredModal(props) {
         <Button variant="primary" type="submit">
           Submit
         </Button>
-        <Button onClick={props.onHide}>
-          Close
-        </Button>
       </Modal.Footer>
     </Modal>
   );
 }
-  
-function App() {
-  const [modalShow, setModalShow] = React.useState(false);
 
-  return (
-    <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
+// function App() {
+//   const [modalShow, setModalShow] = React.useState(false);
 
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
-    </>
-  );
-}
-  
-render(<App />);
+//   return (
+//     <>
+//       <Button variant="primary" onClick={() => setModalShow(true)}>
+//         Launch vertically centered modal
+//       </Button>
+
+//       <MyVerticallyCenteredModal
+//         show={modalShow}
+//         onHide={() => setModalShow(false)}
+//       />
+//     </>
+//   );
+// }
+
+// render(<App />);
 
 
-export default MyVerticallyCenteredModal;
+export default Modal1;
