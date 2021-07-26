@@ -50,8 +50,8 @@ body {
   right: 0;
   width: 50%;
   height: 100%;
-  background: #3498db url(https://download.unsplash.com/photo-1429041966141-44d228a42775);
-  background-size: cover;
+  background: #1A181B url("./AudioFreq_logo.png");
+  background-size: contain;
   background-position: 50% 50%;
 }
 
@@ -60,8 +60,7 @@ body {
   left: 0;
   width: 50%;
   height: 100%;
-  background: #e74c3c url(https://download.unsplash.com/photo-1428279148693-1cf2163ed67d);
-  background-size: cover;
+  background: #1A181B url("./AudioFreq_logo.png");  background-size:contain;
   background-position: 50% 50%;
 }
 
@@ -127,13 +126,13 @@ body {
 }
 
 .content h2 {
-  color: #03A9F4;
+  color: #CCA43B;
   font-weight: 300;
   font-size: 35px;
 }
 
 button {
-  background: #03A9F4;
+  background: #5C80BC;
   padding: 10px 16px;
   width: auto;
   font-weight: 600;
