@@ -36,11 +36,6 @@ const Profile = () => {
                 <Col>
                 <Image src="holder.js/171x180" rounded />
                 </Col>
-                <Col>
-                    <p>***** Ratings</p>
-                    <p>This is where the review will be</p>
-                </Col>
-
                 </Row>
                 {/* Last row has a Image on the right. This Row is occupied with only the Content that has a review with it.There should bea  button under for Comment.  */}
 
