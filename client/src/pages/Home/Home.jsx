@@ -6,19 +6,31 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import NavBar from "../../components/Navbar";
+import SearchForm from "../../components/SearchForm";
 import PodCard from "../../components/PodCard";
 
 
 function Home() {
-
-
-
     //setting our components initial state
     const [podcasts, setPodcasts] = useState([])
     const [podcast, setPodcast] = useState({})
     const [libraries, setLibraries] = useState([])
     const [library, setLibrary] = useState({})
-  
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+    const [searchQuery, setSearchQuery] = useState(query || '');
+    
+    const filterPodcasts = (podcasts, query) => {
+        if (!query) {
+            return podcasts;
+        }
+        return podcasts.filter((podcast) => {
+            const podName = podcast.title_original.toLowerCase();
+            return podName.includes(query);
+        });
+    };
+
+    const filteredPodcasts = filterPodcasts(podcasts, searchQuery);
 
     useEffect(() => {
         loadPodcast()
@@ -62,14 +74,24 @@ function Home() {
         .catch(err => console.log(err))
     }
 
-
-
     //TODO how to find a specific id from the click of button and adding to library. 
     return (
         <div className="overflow-scroll" >
             <NavBar>
                 Hello World
             </NavBar>
+            <div>
+                <SearchForm
+                    searchQuery={searchQuery}
+                    setSearchQuery={setSearchQuery}
+                    handleFormSubmit={handleFormSubmit}
+                />
+                <ul>
+                    {filteredPodcasts.map(podcast => (
+                        <li key={podcast.key}>{podcast.title_original}</li>
+                    ))}
+                </ul>
+            </div>
             <Container>
                 <Row lg={3} >
                     {podcasts.map(podcast =>(
@@ -81,12 +103,9 @@ function Home() {
                         description={podcast.description_original}
                         handleFormSubmit={handleFormSubmit}
                         handleCommentSubmit={handleCommentSubmit}
-                        
                         />
                     </Col>
-                    ))}
-                    
-                    
+                    ))} 
                 </Row>
             </Container>
         </div>
