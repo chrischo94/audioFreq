@@ -15,7 +15,7 @@ function Navbar() {
 
         <form className="d-flex">
           <a class="nav-link" href="/Profile">Profile</a>
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+          {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input> */}
         </form>
       </div>
     </nav>

@@ -14,7 +14,6 @@ const Welcome = () => {
                 </a>
             </div>
 
-
             <div>
                 <center><h1>THE ONE STOP PODCAST SHOP.</h1></center>
             </div>
@@ -22,9 +21,9 @@ const Welcome = () => {
             <div className="bottom">
                 <center> FIND TRACK REVIEW</center>
             </div>
-
         </div>
     )
+    
 };
 
 export default Welcome;
