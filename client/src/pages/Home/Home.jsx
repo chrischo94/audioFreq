@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth, user } from "../../utils/auth"
 import API from "../../utils/axios/API"
+import "./Home.css";
 
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
@@ -86,11 +87,11 @@ function Home() {
                     setSearchQuery={setSearchQuery}
                     handleFormSubmit={handleFormSubmit}
                 />
-                <ul>
+                {/* <ul>
                     {filteredPodcasts.map(podcast => (
                         <li key={podcast.key}>{podcast.title_original}</li>
                     ))}
-                </ul>
+                </ul> */}
             </div>
             <Container>
                 <Row lg={3} >
