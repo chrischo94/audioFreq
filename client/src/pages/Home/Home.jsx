@@ -93,6 +93,7 @@ function Home() {
                     ))}
                 </ul> */}
             </div>
+            <p className="trending">TRENDING</p>
             <Container>
                 <Row lg={3} >
                     {podcasts.map(podcast =>(
