@@ -22,12 +22,16 @@ function PodCard({ title, image, description, handleFormSubmit, handleCommentSub
             <Card
                 className="card mt-5"
                 style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={image} />
-                <Card.Body>
-                    <Card.Title>{title} </Card.Title>
-                    <Card.Text>
+                <Card.Img className="card-image" variant="top" src={image} />
+                <Card.Header>
+                    <Card.Title className="card-title">{title} </Card.Title>
+                </Card.Header>
+                <Card.Body className="card-body">
+                    <Card.Text className="card-text">
                         {description}
                     </Card.Text>
+                </Card.Body>
+                <Card.Footer className="text-muted">
                     <Row lg={2} >
                         <Col>
                             <Button onClick={() => handleFormSubmit(id)} size="sm" variant="primary">Watched</Button>
@@ -40,7 +44,7 @@ function PodCard({ title, image, description, handleFormSubmit, handleCommentSub
                             </Modal1>
                         </Col>
                     </Row>
-                </Card.Body>
+                </Card.Footer>
             </Card>
         </Container>
     );

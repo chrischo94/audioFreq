@@ -26,7 +26,7 @@ function Profile() {
     function loadLibrary() {
         API.getLibraries()
             .then(library => {
-                setLibraries(libraries.data);
+                setLibraries(libraries.data[0]);
                 setLibrary(library.data[0]);
                 console.log(library.data[0])
             })
@@ -48,7 +48,6 @@ function Profile() {
                         image={library.image} 
                         description={library.description_original}
                         comment={library.comments}
-                        
                         />
                         </Col>
                     ))}
