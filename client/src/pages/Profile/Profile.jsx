@@ -52,7 +52,7 @@ function Profile() {
                         title={cash.title_original} 
                         image={cash.image} 
                         description={cash.description_original}
-                        // comment={cash.comment}
+                        
                         
                         />
                         </Col>
