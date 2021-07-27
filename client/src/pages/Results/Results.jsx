@@ -86,15 +86,10 @@ function Results() {
                     setSearchQuery={setSearchQuery}
                     handleFormSubmit={handleFormSubmit}
                 />
-                <ul>
-                    {filteredPodcasts.map(podcast => (
-                        <li key={podcast.key}>{podcast.title_original}</li>
-                    ))}
-                </ul>
             </div>
             <Container>
                 <Row lg={3} >
-                    {podcasts.map(podcast =>(
+                    {filteredPodcasts.map(podcast =>(
                         <Col key={podcast._id}  >
                         <PodCard 
                         id={podcast._id}
