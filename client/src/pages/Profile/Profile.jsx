@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useAuth } from "../../utils/auth"
+
 import API from "../../utils/axios/API";
 import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
-import { Image } from "react-bootstrap";
+
 import NavBar from "../../components/Navbar";
 
-import PodCard from "../../components/PodCard";
+import ProfileCards from "../../components/profileCards";
 
 
 
@@ -22,13 +21,17 @@ function Profile() {
     useEffect(() => {
         loadLibrary()
     }, [])
+    useEffect(() => {
+        console.log(libraries)
+    }, [libraries])
     
     function loadLibrary() {
         API.getLibraries()
             .then(library => {
-                setLibraries(libraries.data[0]);
-                setLibrary(library.data[0]);
-                console.log(library.data[0])
+                setLibraries(library.data[0]);
+                setLibrary(library);
+                console.log(library.data)
+           
             })
             .catch(err => console.log(err));
     }
@@ -39,19 +42,26 @@ function Profile() {
             <Container>
                 <h1>Favorites</h1>
                 <hr />
-                <Row lg={4} >
-                    {libraries.map(library =>(
-                        <Col xs={6} md={4} key={library._id}  >
-                        <PodCard 
-                        id={library._id}
-                        title={library.title_original} 
-                        image={library.image} 
-                        description={library.description_original}
-                        comment={library.comments}
+                {libraries.podcasts ? (
+                 
+                    <Row lg={4} >
+                    {libraries.podcasts.map(cash =>(
+                        <Col xs={6} md={4}   >
+                             <ProfileCards 
+                        id={cash._id}
+                        title={cash.title_original} 
+                        image={cash.image} 
+                        description={cash.description_original}
+                        // comment={cash.comment}
+                        
                         />
                         </Col>
                     ))}
                 </Row>
+                ):(
+                    <h3>No Podcasts to display</h3>
+                )}
+                
                 <h1>Reviews</h1>
                 <hr />
                 <Row>
