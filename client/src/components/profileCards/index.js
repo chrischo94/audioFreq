@@ -39,6 +39,4 @@ function ProfileCards({ title, image, description, comment}) {
     );
 }
 
-
-
 export default ProfileCards; 

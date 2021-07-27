@@ -43,6 +43,7 @@ function Profile() {
                 <h1>Favorites</h1>
                 <hr />
                 {libraries.podcasts ? (
+                 
                     <Row lg={4} >
                     {libraries.podcasts.map(cash =>(
                         <Col xs={6} md={4}   >
@@ -51,7 +52,8 @@ function Profile() {
                         title={cash.title_original} 
                         image={cash.image} 
                         description={cash.description_original}
-                        comment={cash.comment}
+                        // comment={cash.comment}
+                        
                         />
                         </Col>
                     ))}
