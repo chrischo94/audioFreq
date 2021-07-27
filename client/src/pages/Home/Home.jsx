@@ -36,23 +36,23 @@ function Home() {
 
       function handleFormSubmit(id) {
        //find which object by id
-          API.savePodcast(
+          API.saveLibrary(
               id
           )
             .then(res => loadPodcast())
             .catch(err => console.log(err));
 
       };
-    function loadLibrary() {
-        API.getPodcasts()
-          .then(podcasts => {
-            setLibraries(podcasts.data);
-            setLibrary(podcasts.data[0]);
-            console.log(podcasts.data[0])
+   
+      function loadLibrary() {
+        API.getLibraries()
+          .then(library => {
+            setLibraries(libraries.data);
+            setLibrary(library.data[0]);
+            console.log(library.data[0])
           })
           .catch(err => console.log(err));
       }
-
     function handleCommentSubmit(id1, text) {
         API.saveComment(
             id1,

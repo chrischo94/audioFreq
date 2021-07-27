@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../../utils/auth"
 import API from "../../utils/axios/API";
@@ -7,9 +7,31 @@ import { Row } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Image } from "react-bootstrap";
 import NavBar from "../../components/Navbar";
-import ProfileCards from "../../components/profileCards";
 
-const Profile = () => {
+import PodCard from "../../components/PodCard";
+
+
+
+
+function Profile() {
+
+    const [libraries, setLibraries] = useState([])
+    const [library, setLibrary] = useState({})
+
+
+    useEffect(() => {
+        loadLibrary()
+    }, [])
+    
+    function loadLibrary() {
+        API.getLibraries()
+          .then(library => {
+            setLibraries(libraries.data);
+            setLibrary(library.data[0]);
+            console.log(library.data[0])
+          })
+          .catch(err => console.log(err));
+      }
     return (
         <div>
             <NavBar />
@@ -17,24 +39,24 @@ const Profile = () => {
                 <h1>Favorites</h1>
                 <hr />
                 <Row lg={4} >
-                    <Col xs={6} md={4} >
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
-                    <Col>
-                        <ProfileCards />
-                    </Col>
+                    {libraries.map(library =>(
+                        <Col xs={6} md={4} key={library._id}  >
+                        <PodCard 
+                        id={library._id}
+                        title={library.title_original} 
+                        image={library.image} 
+                        description={library.description_original}
+                        comment={library.comments}
+                        
+                        />
+                        </Col>
+                    ))}
                 </Row>
                 <h1>Reviews</h1>
                 <hr />
                 <Row>
                 <Col>
-                <Image src="holder.js/171x180" rounded />
+                {/* <Image src="holder.js/171x180" rounded /> */}
                 </Col>
                 <Col>
                     <p>This is where the review will be</p>
