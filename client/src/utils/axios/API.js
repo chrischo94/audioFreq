@@ -19,7 +19,7 @@ export default {
     return axios.post("/api/users", userData);
     },
     getLibraries: function() {
-        return axios.get("/api/Library")
+        return axios.get("/api/Libraries")
     },
     getLibrary: function(id) {
         return axios.get("/api/Library/" + id);
