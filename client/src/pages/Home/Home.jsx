@@ -39,40 +39,40 @@ function Home() {
     
     function loadPodcast() {
         API.getDaPodcast()
-          .then(users => {
-            setPodcasts(users.data);
-            setPodcast(users.data[0]);
-            console.log(users.data[0])
-          })
-          .catch(err => console.log(err));
-      }
+            .then(users => {
+                setPodcasts(users.data);
+                setPodcast(users.data[0]);
+                console.log(users.data[0])
+            })
+            .catch(err => console.log(err));
+    }
 
-      function handleFormSubmit(id) {
-       //find which object by id
-          API.saveLibrary(
-              id
-          )
+    function handleFormSubmit(id) {
+    //find which object by id
+        API.saveLibrary(
+            id
+        )
             .then(res => loadPodcast())
             .catch(err => console.log(err));
-
-      };
+    };
    
-      function loadLibrary() {
+    function loadLibrary() {
         API.getLibraries()
-          .then(library => {
-            setLibraries(libraries.data);
-            setLibrary(library.data[0]);
-            console.log(library.data[0])
-          })
-          .catch(err => console.log(err));
-      }
+            .then(library => {
+                setLibraries(libraries.data);
+                setLibrary(library.data[0]);
+                console.log(library.data[0])
+            })
+            .catch(err => console.log(err));
+    }
+
     function handleCommentSubmit(id1, text) {
         API.saveComment(
             id1,
             text
         )
-        .then(res => loadLibrary())
-        .catch(err => console.log(err))
+            .then(res => loadLibrary())
+            .catch(err => console.log(err))
     }
 
     //TODO how to find a specific id from the click of button and adding to library. 

@@ -25,13 +25,14 @@ function Profile() {
     
     function loadLibrary() {
         API.getLibraries()
-          .then(library => {
-            setLibraries(libraries.data);
-            setLibrary(library.data[0]);
-            console.log(library.data[0])
-          })
-          .catch(err => console.log(err));
-      }
+            .then(library => {
+                setLibraries(libraries.data);
+                setLibrary(library.data[0]);
+                console.log(library.data[0])
+            })
+            .catch(err => console.log(err));
+    }
+
     return (
         <div>
             <NavBar />
