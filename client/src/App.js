@@ -7,6 +7,7 @@ import Home from './pages/Home/Home';
 import Welcome from './pages/Welcome/Welcome';
 import Profile from './pages/Profile/Profile';
 import Results from './pages/Results/Results';
+import ProfileReview from './pages/ProfileReview/ProfileReview'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/profilereview" component={ProfileReview} />
           <Route exact path="/results" component={Results} />
           {/* <ProtectedRoute exact path="/profile" onLoginFail="/login" component={Profile} /> */}
           {/* <ProtectedRoute exact path="/results" onLoginFail="/login" component={Results} /> */}

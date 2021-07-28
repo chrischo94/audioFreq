@@ -4,21 +4,21 @@ const db = require("../models");
 module.exports = {
     findAll: function(req, res) {
       db.Comment
-        .find(req.query)
-        .sort({ name: 1 })
+        .find({username: req.session.username})
+        .populate("podcasts")
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     findById: function(req, res) {
       db.Comment
         .findById(req.params.id)
+        .populate("podcasts")
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
       console.log(req.body)
-      db.Comment.create(req.body)
-      .then(({ _id }) => db.Podcast.findOneAndUpdate({_id:req.params.id}, { $push: { comments: _id } }, { new: true }))
+      db.Podcast.findOneAndUpdate({username:req.session.username}, { $push: { comments: _id } }, { new: true })
       .then(dbUser => {
         res.json(dbUser);
       })
@@ -27,8 +27,7 @@ module.exports = {
       });
     },
     update: function(req, res) {
-      db.Comment
-        .findOneAndUpdate({ _id: req.params.id }, req.body)
+      db.Comment.findOneAndUpdate({_id:req.params.id}, { $push: { podcasts: _id } }, { new: true })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },

@@ -11,7 +11,7 @@ import Modal1 from "../../components/Modal"
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
-function ProfileCards({ title, image}) {
+function profileReviewCards({title, image, comment}) {
 
    
 
@@ -25,10 +25,18 @@ function ProfileCards({ title, image}) {
                 <Card.Header>
                     <Card.Title className="card-title">{title} </Card.Title>
                 </Card.Header>
-               
+                <Card.Body className="card-body">
+                    <Card.Text className="card-text">
+                        {comment}
+                    </Card.Text>
+
+                </Card.Body>
+                
+                
+                
             </Card>
         </Container>
     );
 }
 
-export default ProfileCards; 
+export default profileReviewCards; 

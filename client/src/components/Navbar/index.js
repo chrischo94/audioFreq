@@ -16,6 +16,9 @@ function Navbar() {
           <a class="nav-link" href="/Login">Sign up/Login</a>
         </form>
         <form className="d-flex">
+          <a class="nav-link" href="/ProfileReview">Reviews</a>
+        </form>
+        <form className="d-flex">
           <a class="nav-link" href="/Profile">Profile</a>
           {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input> */}
         </form>
