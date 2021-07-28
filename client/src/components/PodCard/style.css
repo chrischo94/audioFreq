@@ -39,3 +39,9 @@
     font-family: optima;
     font-size: 13px;
 }
+
+.fav-button {
+    background-color: goldenrod;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}

@@ -34,7 +34,7 @@ function PodCard({ title, image, description, handleFormSubmit, handleCommentSub
                 <Card.Footer className="text-muted">
                     <Row lg={2} >
                         <Col>
-                            <Button onClick={() => handleFormSubmit(id)} size="sm" variant="primary">Favorite</Button>
+                            <Button onClick={() => handleFormSubmit(id)} className="fav-button" size="sm" variant="dark">Favorite</Button>
                         </Col>
                         {/* <Col>
                             <Button size="sm" variant="primary" onClick={() => {setModalShow(true); handleCommentSubmit(id);}} >Review</Button>
