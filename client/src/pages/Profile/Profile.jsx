@@ -51,7 +51,7 @@ function Profile() {
                         id={cash._id}
                         title={cash.title_original} 
                         image={cash.image} 
-                        description={cash.description_original}
+                      
                         
                         
                         />
@@ -62,19 +62,7 @@ function Profile() {
                     <h3>No Podcasts to display</h3>
                 )}
                 
-                <h1>Reviews</h1>
-                <hr />
-                <Row>
-                <Col>
-                {/* <Image src="holder.js/171x180" rounded /> */}
-                </Col>
-                <Col>
-                    <p>This is where the review will be</p>
-                </Col>
-
-                </Row>
-                {/* Last row has a Image on the right. This Row is occupied with only the Content that has a review with it.There should bea  button under for Comment.  */}
-
+                
             </Container>
 
         </div>
