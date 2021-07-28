@@ -79,14 +79,14 @@ function Home() {
     return (
         <div className="overflow-scroll" >
             <NavBar>
-                Hello World
+                <SearchForm
+                        searchQuery={searchQuery}
+                        setSearchQuery={setSearchQuery}
+                        handleFormSubmit={handleFormSubmit}
+                    />
             </NavBar>
             <div>
-                <SearchForm
-                    searchQuery={searchQuery}
-                    setSearchQuery={setSearchQuery}
-                    handleFormSubmit={handleFormSubmit}
-                />
+               
                 {/* <ul>
                     {filteredPodcasts.map(podcast => (
                         <li key={podcast.key}>{podcast.title_original}</li>
