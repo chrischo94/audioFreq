@@ -20,6 +20,22 @@ function Navbar() {
           <a class="nav-link" href="/Profile">Profile</a>
           {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input> */}
         </form>
+        <form action="/Results" method="get">
+            <label htmlFor="header-search">
+                <span className="visually-hidden">Search blog posts</span>
+            </label>
+            <input
+                // value={searchQuery}
+                // onInput={e => setSearchQuery(e.target.value)}
+                type="text"
+                id="header-search"
+                placeholder="Search podcasts"
+                name="s"
+            />
+            <button type="submit">
+                Search
+            </button>
+        </form>
       </div>
     </nav>
 
