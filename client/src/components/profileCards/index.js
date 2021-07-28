@@ -25,15 +25,7 @@ function ProfileCards({ title, image, description, comment}) {
                 <Card.Header>
                     <Card.Title className="card-title">{title} </Card.Title>
                 </Card.Header>
-                <Card.Body className="card-body">
-                    <Card.Text className="card-text">
-                        {description}
-                    </Card.Text>
-                    {/* <Card.Text className="card-text">
-                        {comment}
-                    </Card.Text> */}
-                </Card.Body>
-                
+               
             </Card>
         </Container>
     );
