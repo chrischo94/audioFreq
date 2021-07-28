@@ -62,8 +62,7 @@ function Profile() {
                     <h3>No Podcasts to display</h3>
                 )}
                 
-              
-               
+                
             </Container>
 
         </div>
