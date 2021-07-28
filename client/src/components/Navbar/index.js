@@ -13,11 +13,11 @@ function Navbar() {
           <img className="nav-img" src="AF_NavBar.png" alt="logo" width="300" height="120">
           </img>
         </a></a>
-        <form className="d-flex">
-          <a class="nav-link" href="/Login">Sign up/Login</a>
+        <form className="d-flex1">
+          <a class="nav-link" href="/Login">SIGN UP/LOG IN</a>
         </form>
-        <form className="d-flex">
-          <a class="nav-link" href="/Profile">Profile</a>
+        <form className="d-flex2">
+          <a class="nav-link" href="/Profile">PROFILE</a>
           {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input> */}
         </form>
         <form action="/Results" method="get">

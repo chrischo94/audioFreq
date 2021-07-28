@@ -1,4 +1,23 @@
 .nav-img {
     height: 150px;
     width: auto;
+    margin-left: 525px;
+}
+
+.d-flex1 {
+    font-family: optima;
+    position: absolute;
+    float: right;
+    margin-left: 250px;
+    margin-top: 0px;
+    background-color: black;
+}
+
+.d-flex2 {
+    font-family: optima;
+    position: absolute;
+    float: right;
+    margin-left: 75px;
+    margin-top: 0px;
+    background-color: black;
 }
