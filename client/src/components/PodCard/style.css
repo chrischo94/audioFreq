@@ -7,6 +7,9 @@
 .card-image {
     height: 200px;
     max-width: 200px;
+    border: 5px solid #5C80BC;
+    border-style: outset;
+    border-width: 10px;
 }
 
 .card-body {
