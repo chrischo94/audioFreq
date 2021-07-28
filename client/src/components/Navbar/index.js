@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 import { Link } from "react-router-dom";
 
 
@@ -9,7 +10,7 @@ function Navbar() {
     <nav className="navbar navbar-light bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand"><a href="/Home">
-          <img src="AudioFreq_logo.png" alt="logo" width="300" height="120">
+          <img className="nav-img" src="AF_NavBar.png" alt="logo" width="300" height="120">
           </img>
         </a></a>
         <form className="d-flex">
